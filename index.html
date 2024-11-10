@@ -1,0 +1,42 @@
+<html>
+	<head>
+	<title>SORT STRING APP</title>
+	</head>
+	<style>
+		*{font-size:2vw;font-family:Calibri;}
+		body{background-color:white;}
+		form{background-color:#FEF8DD;border:solid;padding:20px;width:30%;}
+		h1{background-color:#FEF8DD;border:solid;padding:20px;width:30%;border-radius:2vw;}
+	</style>
+	<body>
+	<center>
+		<h1>ALPHA ORDER APP</h1>
+		<form onsubmit="sort()">
+			Enter String:<input type="text" id="string" placeholder="Enter String"/>
+			<br/><br/>
+			<input type="submit" value="Sort">
+		</form>
+		<h2 id="msg"></h2>
+		<script>
+		function sort()
+		{
+			event.preventDefault();
+			let string=document.getElementById("string");
+			let msg=document.getElementById("msg");
+			let action=document.activeElement.value;
+
+			if(string.value==="")
+			{
+				alert("Please enter string");
+				msg.innerHTML="";
+				string.focus();
+				return;
+			}
+			
+			let sstring=string.value.split("").sort().join("");
+			msg.innerHTML="Sorted String:"+sstring;
+		}
+		</script>
+	</center>
+	</body>
+</html>
